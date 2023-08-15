@@ -2,7 +2,7 @@
  * @Author: yanghongxuan
  * @Date: 2022-10-19 15:48:00
  * @LastEditors: yanghongxuan
- * @LastEditTime: 2022-10-19 16:39:34
+ * @LastEditTime: 2023-08-15 17:44:06
  * @Description:
  */
 /*
@@ -54,9 +54,10 @@ var nextPermutation = function (nums) {
             return;
         }
     }
+    nums.reverse();
 };
 // @lc code=end
 
-const nums = [1, 2, 3];
+const nums = [3, 2, 1];
 nextPermutation(nums);
 console.log('nums: ', nums);
