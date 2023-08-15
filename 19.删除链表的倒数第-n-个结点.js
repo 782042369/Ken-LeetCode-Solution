@@ -34,43 +34,43 @@
  * @return {ListNode}
  */
 var removeNthFromEnd = function (head, n) {
-  // 先指针先走n-1步
-  let fast = head
-  for (let i = 1; i <= n - 1; i++) {
-    fast = fast.next
-  }
-  let slow = head
-  // 缓存要删除结点的前一个结点
-  let pre = null
-  while (fast.next) {
-    pre = slow
-    fast = fast.next
-    slow = slow.next
-  }
-  // 如果要删除的结点是第一个结点的话，则直接返回slow.next
-  if (pre === null) {
-    return slow.next
-  } else {
-    pre.next = slow.next
-  }
-  return head
-}
+    // 先指针先走n-1步
+    let fast = head;
+    for (let i = 1; i <= n - 1; i++) {
+        fast = fast.next;
+    }
+    let slow = head;
+    // 缓存要删除结点的前一个结点
+    let pre = null;
+    while (fast.next) {
+        pre = slow;
+        fast = fast.next;
+        slow = slow.next;
+    }
+    // 如果要删除的结点是第一个结点的话，则直接返回slow.next
+    if (pre === null) {
+        return slow.next;
+    } else {
+        pre.next = slow.next;
+    }
+    return head;
+};
 // @lc code=end
 let head = {
-    val: 1,
-    next: {
-      val: 2,
-      next: {
-        val: 3,
+        val: 1,
         next: {
-          val: 4,
-          next: {
-            val: 5,
-            next: null
-          }
-        }
-      }
-    }
-  },
-  n = 1
-console.log(removeNthFromEnd(head, n))
+            val: 2,
+            next: {
+                val: 3,
+                next: {
+                    val: 4,
+                    next: {
+                        val: 5,
+                        next: null,
+                    },
+                },
+            },
+        },
+    },
+    n = 1;
+console.log(removeNthFromEnd(head, n));

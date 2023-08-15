@@ -29,67 +29,67 @@
  * }
  */
 function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val
-  this.next = next === undefined ? null : next
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
 }
 const merge = (l1, l2) => {
-  const dummy = new ListNode(0)
-  let h = dummy
-  while (l1 !== null && l2 !== null) {
-    if (l1.val > l2.val) {
-      h.next = l2
-      l2 = l2.next
-    } else {
-      h.next = l1
-      l1 = l1.next
+    const dummy = new ListNode(0);
+    let h = dummy;
+    while (l1 !== null && l2 !== null) {
+        if (l1.val > l2.val) {
+            h.next = l2;
+            l2 = l2.next;
+        } else {
+            h.next = l1;
+            l1 = l1.next;
+        }
+        h = h.next;
     }
-    h = h.next
-  }
-  h.next = l1 || l2
-  return dummy.next
-}
+    h.next = l1 || l2;
+    return dummy.next;
+};
 /**
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
 var mergeKLists = function (lists) {
-  if (lists.length === 0) return null
-  while (lists.length > 1) {
-    const l1 = lists.shift()
-    const l2 = lists.shift()
-    const h = merge(l1, l2)
-    lists.push(h)
-  }
-  return lists[0]
-}
+    if (lists.length === 0) return null;
+    while (lists.length > 1) {
+        const l1 = lists.shift();
+        const l2 = lists.shift();
+        const h = merge(l1, l2);
+        lists.push(h);
+    }
+    return lists[0];
+};
 // @lc code=end
 const l = [
-  {
-    val: 1,
-    next: {
-      val: 3,
-      next: {
-        val: 10,
-        next: null
-      }
-    }
-  },
-  {
-    val: 1,
-    next: {
-      val: 3,
-      next: {
-        val: 4,
-        next: null
-      }
-    }
-  },
-  {
-    val: 2,
-    next: {
-      val: 6,
-      next: null
-    }
-  }
-]
-console.log(mergeKLists(l))
+    {
+        val: 1,
+        next: {
+            val: 3,
+            next: {
+                val: 10,
+                next: null,
+            },
+        },
+    },
+    {
+        val: 1,
+        next: {
+            val: 3,
+            next: {
+                val: 4,
+                next: null,
+            },
+        },
+    },
+    {
+        val: 2,
+        next: {
+            val: 6,
+            next: null,
+        },
+    },
+];
+console.log(mergeKLists(l));

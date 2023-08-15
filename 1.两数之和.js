@@ -20,15 +20,15 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  const map = new Map()
-  for (let i = 0; i < nums.length; i++) {
-    const data = nums[i]
-    if (map.has(target - data)) {
-      return [map.get(target - data), i]
-    } else {
-      map.set(data, i)
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        const data = nums[i];
+        if (map.has(target - data)) {
+            return [map.get(target - data), i];
+        } else {
+            map.set(data, i);
+        }
     }
-  }
-  return []
-}
+    return [];
+};
 // @lc code=end

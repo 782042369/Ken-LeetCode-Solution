@@ -26,10 +26,10 @@
  * @return {number}
  */
 var reverse = function (x) {
-  const absNum = Math.abs(x).toString().split('').reverse().join('')
-  if (absNum > 2 ** 31) return 0
-  return absNum * Math.sign(x)
-}
+    const absNum = Math.abs(x).toString().split('').reverse().join('');
+    if (absNum > 2 ** 31) return 0;
+    return absNum * Math.sign(x);
+};
 // @lc code=end
-const x = -11112
-console.log(reverse(x) === -21111)
+const x = -11112;
+console.log(reverse(x) === -21111);

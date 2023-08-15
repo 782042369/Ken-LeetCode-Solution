@@ -27,29 +27,29 @@
  * @return {number}
  */
 var threeSumClosest = function (nums, target) {
-  let min = Infinity
-  nums.sort((a, b) => a - b)
-  const len = nums.length
-  for (let i = 0; i < len; i++) {
-    let [left, right] = [i + 1, len - 1]
-    while (left < right) {
-      // 当前三数之和
-      let sum = nums[i] + nums[left] + nums[right]
-      // 如果当前和更接近，更新最小值
-      if (Math.abs(sum - target) < Math.abs(min - target)) {
-        min = sum
-      }
-      // 根据sum和target的关系，移动指针
-      if (sum < target) {
-        left++
-      } else if (sum > target) {
-        right--
-      } else {
-        // sum和target相等，直接返回sum，肯定是最小的了
-        return sum
-      }
+    let min = Infinity;
+    nums.sort((a, b) => a - b);
+    const len = nums.length;
+    for (let i = 0; i < len; i++) {
+        let [left, right] = [i + 1, len - 1];
+        while (left < right) {
+            // 当前三数之和
+            let sum = nums[i] + nums[left] + nums[right];
+            // 如果当前和更接近，更新最小值
+            if (Math.abs(sum - target) < Math.abs(min - target)) {
+                min = sum;
+            }
+            // 根据sum和target的关系，移动指针
+            if (sum < target) {
+                left++;
+            } else if (sum > target) {
+                right--;
+            } else {
+                // sum和target相等，直接返回sum，肯定是最小的了
+                return sum;
+            }
+        }
     }
-  }
-  return min
-}
+    return min;
+};
 // @lc code=end

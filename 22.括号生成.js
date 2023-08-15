@@ -26,19 +26,19 @@
  * @return {string[]}
  */
 var generateParenthesis = function (n) {
-  console.log('n: ', n)
-  const res = []
-  const helper = (l, r, s) => {
-    if (s.length === n * 2) {
-      res.push(s)
-      return
-    }
-    if (r < l) helper(l, r + 1, s + ')')
-    if (l < n) helper(l + 1, r, s + '(')
-  }
-  helper(0, 0, '')
-  return res
-}
+    console.log('n: ', n);
+    const res = [];
+    const helper = (l, r, s) => {
+        if (s.length === n * 2) {
+            res.push(s);
+            return;
+        }
+        if (r < l) helper(l, r + 1, s + ')');
+        if (l < n) helper(l + 1, r, s + '(');
+    };
+    helper(0, 0, '');
+    return res;
+};
 // @lc code=end
 
-console.log(generateParenthesis(2))
+console.log(generateParenthesis(2));

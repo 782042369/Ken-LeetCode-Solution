@@ -26,33 +26,33 @@
  * @return {string[]}
  */
 var letterCombinations = function (digits) {
-  if (digits == null || digits.length === 0) return []
+    if (digits == null || digits.length === 0) return [];
 
-  const map = {
-    2: 'abc',
-    3: 'def',
-    4: 'ghi',
-    5: 'jkl',
-    6: 'mno',
-    7: 'pqrs',
-    8: 'tuv',
-    9: 'wxyz'
-  }
+    const map = {
+        2: 'abc',
+        3: 'def',
+        4: 'ghi',
+        5: 'jkl',
+        6: 'mno',
+        7: 'pqrs',
+        8: 'tuv',
+        9: 'wxyz',
+    };
 
-  const res = []
-  const deep = (i = 0, s = '') => {
-    if (i === digits.length) {
-      res.push(s)
-      return
-    }
-    Object.keys(map[digits[i]]).forEach((ele) => {
-      deep(i + 1, s + map[digits[i]][ele])
-    })
-  }
+    const res = [];
+    const deep = (i = 0, s = '') => {
+        if (i === digits.length) {
+            res.push(s);
+            return;
+        }
+        Object.keys(map[digits[i]]).forEach(ele => {
+            deep(i + 1, s + map[digits[i]][ele]);
+        });
+    };
 
-  deep()
-  return res
-}
+    deep();
+    return res;
+};
 // @lc code=end
 
 // const digits = '23'

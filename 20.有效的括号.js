@@ -26,22 +26,22 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-  const res = []
-  const map = {
-    '(': ')',
-    '[': ']',
-    '{': '}'
-  }
-  for (let i = 0; i < s.length; i++) {
-    const key = s[i]
-    const value = map[key]
-    if (value) {
-      res.push(value)
-    } else if (key !== res.pop()) {
-      return false
+    const res = [];
+    const map = {
+        '(': ')',
+        '[': ']',
+        '{': '}',
+    };
+    for (let i = 0; i < s.length; i++) {
+        const key = s[i];
+        const value = map[key];
+        if (value) {
+            res.push(value);
+        } else if (key !== res.pop()) {
+            return false;
+        }
     }
-  }
-  return res.length === 0
-}
+    return res.length === 0;
+};
 // @lc code=end
-console.log(isValid('([{}])()'))
+console.log(isValid('([{}])()'));

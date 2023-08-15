@@ -26,19 +26,19 @@
  * @return {number}
  */
 const symbols = {
-  I: 1,
-  V: 5,
-  X: 10,
-  L: 50,
-  C: 100,
-  D: 500,
-  M: 1000
-}
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+};
 var romanToInt = function (s) {
-  return s.split('').reduce((acc, cur, index) => {
-    const num = symbols[cur]
-    return num < symbols[s[index + 1]] ? acc - num : acc + num
-  }, 0)
-}
+    return s.split('').reduce((acc, cur, index) => {
+        const num = symbols[cur];
+        return num < symbols[s[index + 1]] ? acc - num : acc + num;
+    }, 0);
+};
 // @lc code=end
-console.log(romanToInt('IV'))
+console.log(romanToInt('IV'));

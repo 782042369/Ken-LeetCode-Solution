@@ -27,20 +27,20 @@
  * @return {number}
  */
 var findMedianSortedArrays = function (nums1, nums2) {
-  const arr = [...nums1, ...nums2]
-  const len = arr.length
-  if (len === 1) return arr[0]
-  arr.sort((a, b) => a - b)
-  if (len % 2 === 0) {
-    const theMiddle = len / 2
-    return (arr[theMiddle] + arr[theMiddle - 1]) / 2
-  } else {
-    return arr[(len - 1) / 2]
-  }
-}
+    const arr = [...nums1, ...nums2];
+    const len = arr.length;
+    if (len === 1) return arr[0];
+    arr.sort((a, b) => a - b);
+    if (len % 2 === 0) {
+        const theMiddle = len / 2;
+        return (arr[theMiddle] + arr[theMiddle - 1]) / 2;
+    } else {
+        return arr[(len - 1) / 2];
+    }
+};
 // @lc code=end
 
-var nums1 = [3]
-var nums2 = [-2, -1]
-const result = findMedianSortedArrays(nums1, nums2)
-console.log('result: ', result)
+var nums1 = [3];
+var nums2 = [-2, -1];
+const result = findMedianSortedArrays(nums1, nums2);
+console.log('result: ', result);

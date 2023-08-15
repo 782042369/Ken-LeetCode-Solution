@@ -26,13 +26,13 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  const strMap = {}
-  let left = 0
-  // 切字符串
-  return s.split('').reduce((max, val, i) => {
-    left = strMap[val] >= left ? strMap[val] + 1 : left
-    strMap[val] = i
-    return Math.max(max, i - left + 1)
-  }, 0)
-}
+    const strMap = {};
+    let left = 0;
+    // 切字符串
+    return s.split('').reduce((max, val, i) => {
+        left = strMap[val] >= left ? strMap[val] + 1 : left;
+        strMap[val] = i;
+        return Math.max(max, i - left + 1);
+    }, 0);
+};
 // @lc code=end

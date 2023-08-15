@@ -27,21 +27,21 @@
  * @return {number}
  */
 var strStr = function (haystack, needle) {
-  if (needle === '' || needle === haystack) return 0
-  const nlen = needle.length
-  const hlen = haystack.length
-  if (hlen < nlen) return -1
-  for (let i = 0; i < hlen - nlen + 1; i++) {
-    if (haystack[i] === needle[0]) {
-      if (haystack.slice(i, i + needle.length) === needle) {
-        return i
-      }
+    if (needle === '' || needle === haystack) return 0;
+    const nlen = needle.length;
+    const hlen = haystack.length;
+    if (hlen < nlen) return -1;
+    for (let i = 0; i < hlen - nlen + 1; i++) {
+        if (haystack[i] === needle[0]) {
+            if (haystack.slice(i, i + needle.length) === needle) {
+                return i;
+            }
+        }
     }
-  }
-  return -1
-}
+    return -1;
+};
 // @lc code=end
 
 const haystack = '123',
-  needle = '23'
-console.log(strStr(haystack, needle))
+    needle = '23';
+console.log(strStr(haystack, needle));

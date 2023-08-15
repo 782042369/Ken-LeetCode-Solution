@@ -26,10 +26,10 @@
  * @return {boolean}
  */
 var isPalindrome = function (x) {
-  const result = x.toString()
-  return result.split('').reverse().join('') === result
-}
+    const result = x.toString();
+    return result.split('').reverse().join('') === result;
+};
 // @lc code=end
 
-console.log(isPalindrome(121))
-console.log(isPalindrome(-121))
+console.log(isPalindrome(121));
+console.log(isPalindrome(-121));

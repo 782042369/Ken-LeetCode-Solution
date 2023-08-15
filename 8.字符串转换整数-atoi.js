@@ -26,12 +26,9 @@
  * @return {number}
  */
 var myAtoi = function (s) {
-  return Math.max(
-    Math.min(parseInt(s) || 0, Math.pow(2, 31) - 1),
-    -1 * Math.pow(2, 31)
-  )
-}
+    return Math.max(Math.min(parseInt(s) || 0, Math.pow(2, 31) - 1), -1 * Math.pow(2, 31));
+};
 // @lc code=end
 
-const s = '-214748364 987 aaa '
-console.log(myAtoi(s))
+const s = '-214748364 987 aaa ';
+console.log(myAtoi(s));

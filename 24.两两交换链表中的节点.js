@@ -33,26 +33,26 @@
  * @return {ListNode}
  */
 var swapPairs = function (head) {
-  if (!head || !head.next) return head
-  const l1 = head
-  const l2 = head.next
-  const l3 = l2.next
-  l2.next = l1
-  l1.next = swapPairs(l3)
-  return l2
-}
+    if (!head || !head.next) return head;
+    const l1 = head;
+    const l2 = head.next;
+    const l3 = l2.next;
+    l2.next = l1;
+    l1.next = swapPairs(l3);
+    return l2;
+};
 // @lc code=end
 const h = {
-  val: 1,
-  next: {
-    val: 2,
+    val: 1,
     next: {
-      val: 3,
-      next: {
-        val: 4,
-        next: null
-      }
-    }
-  }
-}
-console.log(swapPairs(h))
+        val: 2,
+        next: {
+            val: 3,
+            next: {
+                val: 4,
+                next: null,
+            },
+        },
+    },
+};
+console.log(swapPairs(h));

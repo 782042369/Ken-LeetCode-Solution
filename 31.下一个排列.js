@@ -26,37 +26,37 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var nextPermutation = function (nums) {
-  if (!nums || nums.length === 0) return []
-  const len = nums.length
-  const nextLarge = (idx) => {
-    for (let i = len - 1; i > idx; i--) {
-      if (nums[i] > nums[idx]) return i
-    }
-  }
-  // 交换
-  const swap = (i, j) => ([nums[i], nums[j]] = [nums[j], nums[i]])
-  // 反转
-  const reverse = (idx) => {
-    let start = idx,
-      end = len - 1
+    if (!nums || nums.length === 0) return [];
+    const len = nums.length;
+    const nextLarge = idx => {
+        for (let i = len - 1; i > idx; i--) {
+            if (nums[i] > nums[idx]) return i;
+        }
+    };
+    // 交换
+    const swap = (i, j) => ([nums[i], nums[j]] = [nums[j], nums[i]]);
+    // 反转
+    const reverse = idx => {
+        let start = idx,
+            end = len - 1;
 
-    while (start < end) {
-      swap(start, end)
-      start++
-      end--
+        while (start < end) {
+            swap(start, end);
+            start++;
+            end--;
+        }
+    };
+    for (let i = len - 1; i >= 0; i--) {
+        if (nums[i] < nums[i + 1]) {
+            const large = nextLarge(i);
+            swap(i, large);
+            reverse(i + 1);
+            return;
+        }
     }
-  }
-  for (let i = len - 1; i >= 0; i--) {
-    if (nums[i] < nums[i + 1]) {
-      const large = nextLarge(i)
-      swap(i, large)
-      reverse(i + 1)
-      return
-    }
-  }
-}
+};
 // @lc code=end
 
-const nums = [1, 2, 3]
-nextPermutation(nums)
-console.log('nums: ', nums)
+const nums = [1, 2, 3];
+nextPermutation(nums);
+console.log('nums: ', nums);

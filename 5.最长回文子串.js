@@ -50,32 +50,32 @@
     return res;
  */
 var longestPalindrome = function (s) {
-  let res = ''
-  for (let i = 0; i < s.length; i++) {
-    // 奇数情况
-    let left = i
-    let right = i
-    while (left >= 0 && right < s.length && s[left] === s[right]) {
-      left--
-      right++
+    let res = '';
+    for (let i = 0; i < s.length; i++) {
+        // 奇数情况
+        let left = i;
+        let right = i;
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            left--;
+            right++;
+        }
+        if (res.length < right - left - 1) {
+            res = s.substr(left + 1, right - left - 1);
+        }
+        // 偶数情况
+        left = i;
+        right = i + 1;
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            left--;
+            right++;
+        }
+        if (res.length < right - left - 1) {
+            res = s.substr(left + 1, right - left - 1);
+        }
     }
-    if (res.length < right - left - 1) {
-      res = s.substr(left + 1, right - left - 1)
-    }
-    // 偶数情况
-    left = i
-    right = i + 1
-    while (left >= 0 && right < s.length && s[left] === s[right]) {
-      left--
-      right++
-    }
-    if (res.length < right - left - 1) {
-      res = s.substr(left + 1, right - left - 1)
-    }
-  }
-  return res
-}
+    return res;
+};
 // @lc code=end
 
-const result = longestPalindrome('b1abba1aaaaa')
-console.log('result: ', result)
+const result = longestPalindrome('b1abba1aaaaa');
+console.log('result: ', result);
