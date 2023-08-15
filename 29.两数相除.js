@@ -2,7 +2,7 @@
  * @Author: yanghongxuan
  * @Date: 2022-10-10 16:20:03
  * @LastEditors: yanghongxuan
- * @LastEditTime: 2022-10-11 10:38:10
+ * @LastEditTime: 2023-08-15 15:24:52
  * @Description:
  */
 /*
@@ -30,7 +30,7 @@ var divide = function (dividend, divisor) {
   if (divisor === 0) return 0
   if (dividend === 0) return 0
   if (dividend === -2147483648 && divisor === -1) return 2147483647
-  const isPositive = dividend > 0 !== divisor > 0
+  const isPositive =dividend > 0 !== divisor > 0 ? false : true
 
   dividend = Math.abs(dividend)
   divisor = Math.abs(divisor)
@@ -54,4 +54,4 @@ var divide = function (dividend, divisor) {
 }
 // @lc code=end
 
-console.log(divide(10, 3))
+console.log(divide(10, -3))
